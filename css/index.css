@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean'); 
+body {
+    background-color: #f1c40f;
+    margin-top: 5%;
+}
+
+font {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 3cm;
+}
+
+.character {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.virus1 {
+    position: absolute;
+    top: 180px;
+    left: 180px;
+}
+
+.virus2 {
+    position: absolute;
+    bottom: 100px;
+    left: 300px;
+}
+
+.how_to_play_btn {
+    font-size: xx-large;
+    color: white;
+    width: 200;
+    height: 80;
+    background-color: black;
+    position: absolute;
+    top: 430px;
+    right: 250px;
+}
+
+.start_btn {
+    font-size: xx-large;
+    color: white;
+    width: 200;
+    height: 80;
+    background-color: black;
+    position: absolute;
+    bottom: 120px;
+    right: 250px;
+}
