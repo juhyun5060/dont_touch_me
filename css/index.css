@@ -17,34 +17,36 @@ font {
 
 .virus1 {
     position: absolute;
-    top: 180px;
-    left: 180px;
+    top: 20%;
+    left: 10%;
 }
 
 .virus2 {
     position: absolute;
-    bottom: 100px;
-    left: 300px;
+    bottom: 20%;
+    left: 20%;
 }
 
 .how_to_play_btn {
-    font-size: xx-large;
+    font-size: 5vh;
     color: white;
-    width: 200;
-    height: 80;
+    width: 13%;
+    height: 10%;
     background-color: black;
     position: absolute;
-    top: 430px;
-    right: 250px;
+    top: 60%;
+    right: 15%;
+    border-radius: 10px;
 }
 
 .start_btn {
-    font-size: xx-large;
+    font-size: 5vh;
     color: white;
-    width: 200;
-    height: 80;
+    width: 13%;
+    height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 120px;
-    right: 250px;
+    bottom: 15%;
+    right: 15%;
+    border-radius: 10px;
 }
