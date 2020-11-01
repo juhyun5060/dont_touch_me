@@ -1,52 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean'); 
 body {
-    background-color: #f1c40f;
-    margin-top: 5%;
     overflow: hidden;
+    margin: 0;
 }
 
-font {
+.gameover {
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 3cm;
+    font-size: 2cm;
+    background-color: #f1c40f;
+    text-align: center;
+    padding: 10 10 10 10;
+    margin: 0;
 }
 
-.character {
+.donttouchme {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .virus1 {
     position: absolute;
-    top: 20%;
+    top: 30%;
     left: 10%;
 }
 
 .virus2 {
     position: absolute;
-    bottom: 20%;
-    left: 20%;
+    bottom: 40%;
+    left: 80%;
 }
 
 .virus3 {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 75%;
 }
 
-.how_to_play_btn {
-    font-size: 5vh;
-    color: white;
-    width: 13%;
-    height: 10%;
-    background-color: black;
-    position: absolute;
-    top: 60%;
-    right: 15%;
-    border-radius: 10px;
-}
-
-.start_btn {
+.main {
     font-size: 5vh;
     color: white;
     width: 13%;
@@ -55,5 +46,17 @@ font {
     position: absolute;
     bottom: 15%;
     right: 15%;
+    border-radius: 10px;
+}
+
+.again {
+    font-size: 5vh;
+    color: white;
+    width: 13%;
+    height: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
     border-radius: 10px;
 }
