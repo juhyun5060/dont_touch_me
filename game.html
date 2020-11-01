@@ -26,10 +26,15 @@
   var score = 0;
   var txtScore;
   var eventScore;
+  var virus1,virus2,virus3;
   function preload() {
     game.load.image("box", "./images/box.png");
     game.load.image("player", "./images/character50x75.png");
     game.load.image("enemy", "./images/virus_mouse_left50x50.png");
+    game.load.image("virus1", "./images/virus170x70.png");
+    game.load.image("virus2", "./images/virus270x70.png");
+    game.load.image("virus3", "./images/virus370x70.png");
+
 
     // 게임에 필요한 데이터 로드
   }
@@ -43,7 +48,7 @@
     sky = game.add.group();
     sky.enableBody = true;
     sky.create(0, 0, "sky");
-
+    
     box = game.add.group();      // box 그룹 생성
     box.enableBody = true;       // box에 충돌속성을 설정합니다.
     for (var i = 0; i < 20; i++) {
@@ -67,20 +72,30 @@
     enemy = game.add.group();
     enemy.enableBody = true;
     enemy.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy.createMultiple(7, "enemy"); //적 개수
+    enemy.createMultiple(10, "enemy"); //적 개수
 
     enemy.setAll("outOfBoundsKill", true);
     enemy.setAll("checkWorldBounds", true);
 
     keyMove = game.input.keyboard.createCursorKeys();
-    txtScore = game.add.text(20, 10, "Score : 0", { fontSize: "50px Arial", fill: "#FFFFFF" });
-    eventScore = game.time.events.loop(Phaser.Timer.SECOND, function () { score++; txtScore.setText("Score : " + score); }, this);
-  }
+
+    txtScore = game.add.text(20, 10, "TIME : 0", { fontSize: "50px Arial", fill: "#FFFFFF" });
+    eventScore = game.time.events.loop(Phaser.Timer.SECOND, function () { score++; txtScore.setText("TIME : " + score); }, this);
+    //virus1 = game.add.image(500,10,"virus1");
+    //virus2 = game.add.image(600,10,"virus2");
+    //virus3 = game.add.image(700,10,"virus3");
+  
+  }//end of create
 
   function update() {
     // 프레임워크에서 주기적으로 수행하는 함수
     player.body.velocity.setTo(0, 0); // 관성을 0으로 설정  
-    if (playerLife < 1) {
+    if(playerLife==2){
+      virus1 = game.add.image(700,10,"virus1");
+    }else if(playerLife==1){
+      virus2 = game.add.image(600,10,"virus2");
+    }else if(playerLife<1){
+      virus3 = game.add.image(500,10,"virus3");
       return;
     }
 
@@ -131,7 +146,7 @@
       var random = game.rnd.integerInRange(0, enemyArray.length - 1);
       var enemyBox = enemyArray[random];
       enemyAlive.reset(enemyBox.body.x, enemyBox.body.y);
-      game.physics.arcade.moveToObject(enemyAlive, player, 50); //적 속도 조절
+      game.physics.arcade.moveToObject(enemyAlive, player, 70); //적 속도 조절
     }
 
     game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
@@ -144,7 +159,9 @@
   function HitsPlayer(sky, enemies) {
     enemies.kill();
     playerLife -= 1;
+    if(playerLife==0){
     game.time.events.remove(eventScore);
+  }
   }
 
 
