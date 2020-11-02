@@ -10,10 +10,10 @@ var enemy2Alive;
 var enemy2Array = [];
 var sky;
 var playerLife = 3; //총 목숨 3개 
-var score = 0;
-var txtScore;
+var time = 30; //초기 시간 30초로 설정
+var txtTime;
 var txtLocation;
-var eventScore;
+var eventTime;
 var playb,pauseb;
 var virus1,virus2,virus3;
 function preload() {
@@ -78,9 +78,9 @@ function create() {
 
   keyMove = game.input.keyboard.createCursorKeys();
 
-  txtScore = game.add.text(400, 10, "TIME : 0", { fontSize: "35px Arial", fill: "#FFFFFF" });
+  txtTime = game.add.text(400, 10, "TIME : 0", { fontSize: "35px Arial", fill: "#FFFFFF" });
   txtLocation = game.add.text(10, 15, "버스 -> 길 ", { fontSize: "20px Arial", fill: "#FFFFFF" });
-  eventScore = game.time.events.loop(Phaser.Timer.SECOND, function () { score++; txtScore.setText("TIME : " + score); }, this);
+  eventTime = game.time.events.loop(Phaser.Timer.SECOND, function () { time--; txtTime.setText("TIME : " + time); }, this);
   //virus1 = game.add.image(500,10,"virus1");
   //virus2 = game.add.image(600,10,"virus2");
   //virus3 = game.add.image(700,10,"virus3");
@@ -88,6 +88,11 @@ function create() {
 }//end of create
 
 function update() {
+  
+  if(time ==0){ //30초 넘기면 다음 스테이지 
+    location.href="clearStage3.html"
+  }
+
   // 프레임워크에서 주기적으로 수행하는 함수
   player.body.velocity.setTo(0, 0); // 관성을 0으로 설정  
   if(playerLife==2){
@@ -179,7 +184,7 @@ function HitsPlayer(sky, enemies) {
   enemies.kill();
   playerLife -= 1;
   if(playerLife==0){
-  game.time.events.remove(eventScore);
+  game.time.events.remove(eventTime);
   location.href = "gameOver3.html";
   }
 }
