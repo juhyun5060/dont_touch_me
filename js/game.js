@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>돈 땃쥐 미 </title>
-</head>
-
-<script src="./js/phaser.min.js"></script>
-<script src="./js/game.js"></script>
-<body>
-  돈땃쥐미
-</body>
-</html>
-
-<!-- </html>
-<script type="text/javascript">
   var game = new Phaser.Game(800, 600, Phaser.CANVAS, null, { preload: preload, create: create, update: update });
   var box;
   var player;
@@ -165,4 +148,3 @@
     location.href = "gameOver.html";
   }
   }
-</script> -->
