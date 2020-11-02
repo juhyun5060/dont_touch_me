@@ -2,24 +2,22 @@
 
 body {
     background-color: #f1c40f;
-    margin: 5% 5% 5% 5%;
+    margin: 5% 5% 5% 15%;
     overflow: hidden;
 }
 
 h1 {
     font-family: 'Gothic A1', sans-serif;
     font-size: 50px;
-    text-align: center;
+    right: 5%;
+    top: 5%;
 }
 
 font {
     font-family: 'Gothic A1', sans-serif;
 }
 
-.character {
-    margin-left: 7%;
-    margin-top: 4%;
-}
+
 
 .start_btn {
     font-size: 5vh;
@@ -28,7 +26,19 @@ font {
     height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 15%;
-    right: 15%;
+    bottom: 10%;
+    right: 5%;
+    border-radius: 10px;
+}
+
+.main_btn {
+    font-size: 5vh;
+    color: white;
+    width: 13%;
+    height: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
     border-radius: 10px;
 }
