@@ -40,6 +40,7 @@
     
     box = game.add.group();      // box 그룹 생성
     box.enableBody = true;       // box에 충돌속성을 설정합니다.
+
     for (var i = 0; i < 20; i++) {
       var rowBox = box.create(i * 40, 80, "box");
       rowBox.body.immovable = true;   // box가 움직이지 못하도록 설정합니다.
@@ -64,12 +65,12 @@
     enemy1 = game.add.group();
     enemy1.enableBody = true;
     enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy1.createMultiple(10, "enemy1"); //적 개수
+    enemy1.createMultiple(15, "enemy1"); //적 개수
 
     enemy2 = game.add.group();
     enemy2.enableBody = true;
     enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy2.createMultiple(10, "enemy2"); //적 개수
+    enemy2.createMultiple(15, "enemy2"); //적 개수
 
     enemy2.setAll("outOfBoundsKill", true);
     enemy2.setAll("checkWorldBounds", true);
@@ -179,4 +180,4 @@
     game.time.events.remove(eventScore);
     location.href = "gameOver.html";
     }
-    }
+}
