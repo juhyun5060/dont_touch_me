@@ -1,5 +1,8 @@
-function howToPlay() {
-    location.href="howToPlay.html"
+function story() {
+    location.href="story.html"
+}
+function HowToPlay(){
+    location.href="HowToPlay.html"
 }
 
 function start() {

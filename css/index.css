@@ -30,22 +30,33 @@ font {
 
 .virus3 {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 75%;
 }
 
-.how_to_play_btn {
+.story_btn {
     font-size: 5vh;
     color: white;
     width: 13%;
     height: 10%;
     background-color: black;
     position: absolute;
-    top: 60%;
-    right: 15%;
+    bottom: 36%;
+    right: 10%;
     border-radius: 10px;
 }
 
+.how_btn {
+    font-size: 5vh;
+    color: white;
+    width: 13%;
+    height: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: 24%;
+    right: 10%;
+    border-radius: 10px;
+}
 .start_btn {
     font-size: 5vh;
     color: white;
@@ -53,7 +64,7 @@ font {
     height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 15%;
-    right: 15%;
+    bottom: 12%;
+    right: 10%;
     border-radius: 10px;
 }
