@@ -3,5 +3,5 @@ function main() {
 }
 
 function restart() {
-    location.href="game.html"
+    location.href="game1.html"
 }

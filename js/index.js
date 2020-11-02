@@ -3,5 +3,5 @@ function howToPlay() {
 }
 
 function start() {
-    location.href="game.html"
+    location.href="game1.html"
 }
