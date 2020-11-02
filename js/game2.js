@@ -66,12 +66,12 @@ function create() {
   enemy1 = game.add.group();
   enemy1.enableBody = true;
   enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-  enemy1.createMultiple(3, "enemy1"); //적 개수
+  enemy1.createMultiple(6, "enemy1"); //적 개수
 
   enemy2 = game.add.group();
   enemy2.enableBody = true;
   enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-  enemy2.createMultiple(3, "enemy2"); //적 개수
+  enemy2.createMultiple(6, "enemy2"); //적 개수
 
   enemy2.setAll("outOfBoundsKill", true);
   enemy2.setAll("checkWorldBounds", true);
@@ -154,14 +154,14 @@ function update() {
     var random = game.rnd.integerInRange(0, enemy1Array.length - 1);
     var enemy1Box = enemy1Array[random];
     enemy1Alive.reset(enemy1Box.body.x, enemy1Box.body.y);
-    game.physics.arcade.moveToObject(enemy1Alive, player, 100); //적 속도 조절
+    game.physics.arcade.moveToObject(enemy1Alive, player, 110); //적 속도 조절
   }
 
   if (enemy2Alive && enemy2Array.length > 0) {
       var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
       var enemy2Box = enemy2Array[random];
       enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
-      game.physics.arcade.moveToObject(enemy2Alive, player, 100); //적 속도 조절
+      game.physics.arcade.moveToObject(enemy2Alive, player, 110); //적 속도 조절
     }
 
   game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
