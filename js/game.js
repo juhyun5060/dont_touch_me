@@ -2,24 +2,29 @@
   var box;
   var player;
   var keyMove;
-  var enemy;
-  var enemyAlive;
-  var enemyArray = [];
+  var enemy1;
+  var enemy1Alive;
+  var enemy1Array = [];
+  var enemy2;
+  var enemy2Alive;
+  var enemy2Array = [];
   var sky;
   var playerLife = 3; //총 목숨 3개 
   var score = 0;
   var txtScore;
   var eventScore;
+  var playb,pauseb;
   var virus1,virus2,virus3;
   function preload() {
     game.load.image("box", "./images/box.png");
     game.load.image("player", "./images/character50x75.png");
-    game.load.image("enemy", "./images/virus_mouse_left50x50.png");
+    game.load.image("enemy1", "./images/virus_mouse_left50x50.png");
+    game.load.image("enemy2", "./images/virus_mouse_right50x50.png");
     game.load.image("virus1", "./images/virus170x70.png");
     game.load.image("virus2", "./images/virus270x70.png");
     game.load.image("virus3", "./images/virus370x70.png");
-
-
+    game.load.image("playb", "./images/playButton.png");
+    game.load.image("pauseb", "./images/pauseButton.png");
     // 게임에 필요한 데이터 로드
   }
 
@@ -53,13 +58,21 @@
     player = game.add.sprite(400, 300, "player");
     game.physics.arcade.enable(player);
 
-    enemy = game.add.group();
-    enemy.enableBody = true;
-    enemy.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy.createMultiple(30, "enemy"); //적 개수
+    //정지 버튼 
+    //pauseb = game.add.image(750,10,"pauseb");
 
-    enemy.setAll("outOfBoundsKill", true);
-    enemy.setAll("checkWorldBounds", true);
+    enemy1 = game.add.group();
+    enemy1.enableBody = true;
+    enemy1.physicsBodyType = Phaser.Physics.ARCADE;
+    enemy1.createMultiple(10, "enemy1"); //적 개수
+
+    enemy2 = game.add.group();
+    enemy2.enableBody = true;
+    enemy2.physicsBodyType = Phaser.Physics.ARCADE;
+    enemy2.createMultiple(10, "enemy2"); //적 개수
+
+    enemy2.setAll("outOfBoundsKill", true);
+    enemy2.setAll("checkWorldBounds", true);
 
     keyMove = game.input.keyboard.createCursorKeys();
 
@@ -75,11 +88,11 @@
     // 프레임워크에서 주기적으로 수행하는 함수
     player.body.velocity.setTo(0, 0); // 관성을 0으로 설정  
     if(playerLife==2){
-      virus1 = game.add.image(700,10,"virus1");
+      virus1 = game.add.image(600,10,"virus1");
     }else if(playerLife==1){
-      virus2 = game.add.image(600,10,"virus2");
+      virus2 = game.add.image(500,10,"virus2");
     }else if(playerLife<1){
-      virus3 = game.add.image(500,10,"virus3");
+      virus3 = game.add.image(400,10,"virus3");
       return;
     }
 
@@ -118,24 +131,43 @@
 
     game.physics.arcade.collide(player, box); //box 와 player 충돌
 
-    enemyAlive = enemy.getFirstExists(false);
-    enemyArray.length = 0;
+    enemy1Alive = enemy1.getFirstExists(false);
+    enemy1Array.length = 0;
+
+    enemy2Alive = enemy2.getFirstExists(false);
+    enemy2Array.length = 0;
+
     //치즈바이러스 쥐 세팅
-    box.forEachAlive(function (enemyAlive) {
-      enemyArray.push(enemyAlive);
+    box.forEachAlive(function (enemy1Alive) {
+      enemy1Array.push(enemy1Alive);
     });
 
+    box.forEachAlive(function (enemy2Alive) {
+        enemy2Array.push(enemy2Alive);
+      });
+
     // box 중 랜덤으로 하나를 골라서 적을 생성한다.
-    if (enemyAlive && enemyArray.length > 0) {
-      var random = game.rnd.integerInRange(0, enemyArray.length - 1);
-      var enemyBox = enemyArray[random];
-      enemyAlive.reset(enemyBox.body.x, enemyBox.body.y);
-      game.physics.arcade.moveToObject(enemyAlive, player, 100); //적 속도 조절
+    if (enemy1Alive && enemy1Array.length > 0) {
+      var random = game.rnd.integerInRange(0, enemy1Array.length - 1);
+      var enemy1Box = enemy1Array[random];
+      enemy1Alive.reset(enemy1Box.body.x, enemy1Box.body.y);
+      game.physics.arcade.moveToObject(enemy1Alive, player, 100); //적 속도 조절
     }
 
+    if (enemy2Alive && enemy2Array.length > 0) {
+        var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
+        var enemy2Box = enemy2Array[random];
+        enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
+        game.physics.arcade.moveToObject(enemy2Alive, player, 100); //적 속도 조절
+      }
+
     game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
-    game.physics.arcade.overlap(sky, enemy, HitsSky, null, this);
-    game.physics.arcade.overlap(player, enemy, HitsPlayer, null, this);
+    game.physics.arcade.overlap(sky, enemy1, HitsSky, null, this);
+    game.physics.arcade.overlap(player, enemy1, HitsPlayer, null, this);
+
+    game.physics.arcade.overlap(sky, enemy2, HitsSky, null, this);
+    game.physics.arcade.overlap(player, enemy2, HitsPlayer, null, this);
+
   }//end of update
   function HitsSky(sky, enemies) {
     enemies.kill();
@@ -146,5 +178,5 @@
     if(playerLife==0){
     game.time.events.remove(eventScore);
     location.href = "gameOver.html";
-  }
-  }
+    }
+    }
