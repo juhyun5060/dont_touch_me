@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean'); 
+
 body {
     overflow: hidden;
     margin: 0;
@@ -14,15 +15,17 @@ body {
     margin: 0;
 }
 
-.clearStage3Img {
-    text-align: center;
-    margin-top: 5%;
+.font {
+    text-align: left;
+    font-family: 'Gothic A1', sans-serif;
+    margin-top: 2%;
+    margin-left: 5%;
 }
 
 .next {
     font-size: 5vh;
     color: white;
-    width: 13%;
+    width: 20%;
     height: 10%;
     background-color: black;
     position: absolute;
@@ -31,14 +34,8 @@ body {
     border-radius: 10px;
 }
 
-.main {
-    font-size: 5vh;
-    color: white;
-    width: 13%;
-    height: 10%;
-    background-color: black;
-    position: absolute;
-    bottom: 15%;
-    left: 15%;
-    border-radius: 10px;
+.grandma {
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 0;
 }

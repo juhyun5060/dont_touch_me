@@ -89,7 +89,7 @@ function create() {
 
 function update() {
   if(time ==0){ //30초 넘기면 다음 스테이지 
-    location.href="medal.html"
+    location.href="clearStage4.html"
   }
 
   // 프레임워크에서 주기적으로 수행하는 함수
