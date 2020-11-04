@@ -79,7 +79,7 @@ function create() {
   keyMove = game.input.keyboard.createCursorKeys();
 
   txtTime = game.add.text(400, 10, "TIME : 0", { fontSize: "35px Arial", fill: "#FFFFFF" });
-  txtLocation = game.add.text(10, 15, "버스 -> 길 ", { fontSize: "20px Arial", fill: "#FFFFFF" });
+  txtLocation = game.add.text(10, 15, "STAGE 3 지하철 -> 길", { fontSize: "20px Arial", fill: "#FFFFFF" });
   eventTime = game.time.events.loop(Phaser.Timer.SECOND, function () { time--; txtTime.setText("TIME : " + time); }, this);
   //virus1 = game.add.image(500,10,"virus1");
   //virus2 = game.add.image(600,10,"virus2");

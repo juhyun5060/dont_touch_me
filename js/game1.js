@@ -66,12 +66,12 @@
     enemy1 = game.add.group();
     enemy1.enableBody = true;
     enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy1.createMultiple(4, "enemy1"); //적 개수
+    enemy1.createMultiple(6, "enemy1"); //적 개수
 
     enemy2 = game.add.group();
     enemy2.enableBody = true;
     enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy2.createMultiple(4, "enemy2"); //적 개수
+    enemy2.createMultiple(6, "enemy2"); //적 개수
 
     enemy2.setAll("outOfBoundsKill", true);
     enemy2.setAll("checkWorldBounds", true);
@@ -79,7 +79,7 @@
     keyMove = game.input.keyboard.createCursorKeys();
 
     txtTime = game.add.text(400, 10, "TIME : 30", { fontSize: "35px Arial", fill: "#FFFFFF" });
-    txtLocation = game.add.text(10, 15, "집 -> 지하철", { fontSize: "20px Arial", fill: "#FFFFFF" });
+    txtLocation = game.add.text(10, 15, "STAGE 1 집 -> 버스", { fontSize: "20px Arial", fill: "#FFFFFF" });
     eventTime = game.time.events.loop(Phaser.Timer.SECOND, function () { time--; txtTime.setText("TIME : " + time); }, this);
     //virus1 = game.add.image(500,10,"virus1");
     //virus2 = game.add.image(600,10,"virus2");
