@@ -34,7 +34,7 @@ function create() {
   /// 게임 처음 실행시 수행되는 함수
   game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
   game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
-  game.create.texture('sky', ['E'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
+  game.create.texture('sky', ['B'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
   //game.add.sprite(0, 0, 'sky');                   // sky를 x좌표 0, y좌표 0 위치에 추가
   this.backgrouund = this.game.add.sprite(0,0,'back3'); // 게임 배경 설정 
   this.backgrouund.inputEnabled= true; // 게임 배경 설정 

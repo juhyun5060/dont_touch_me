@@ -36,13 +36,14 @@
     game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
     //game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
     //game.stage.image(1000, 600, 'back');
+    game.create.texture('sky', ['B'], 1000, 80, 0);
     this.backgrouund = this.game.add.sprite(0,0,'back'); // 게임 배경 설정 
     this.backgrouund.inputEnabled= true; // 게임 배경 설정 
     //this.backgrouund.events.onInputDown.add(this.placeItemm,this);
-    game.create.texture('sky', ['B'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
-    game.add.sprite(0, 0, 'sky');                  // sky를 x좌표 0, y좌표 0 위치에 추가
+     // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
+    //game.add.sprite(0, 0, 'sky');                  // sky를 x좌표 0, y좌표 0 위치에 추가
     sky = game.add.group();
-    //sky.enableBody = true;
+    sky.enableBody = true;
     sky.create(0, 0, "sky");
     box = game.add.group();      // box 그룹 생성
     box.enableBody = true;       // box에 충돌속성을 설정합니다.
@@ -86,9 +87,6 @@
     txtTime = game.add.text(400, 10, "TIME : 30", { fontSize: "35px Arial", fill: "#FFFFFF" });
     txtLocation = game.add.text(10, 15, "STAGE 1 집 -> 버스", { fontSize: "20px Arial", fill: "#FFFFFF" });
     eventTime = game.time.events.loop(Phaser.Timer.SECOND, function () { time--; txtTime.setText("TIME : " + time); }, this);
-    //virus1 = game.add.image(500,10,"virus1");
-    //virus2 = game.add.image(600,10,"virus2");
-    //virus3 = game.add.image(700,10,"virus3");
   
   }//end of create
 
