@@ -26,6 +26,7 @@ function preload() {
   game.load.image("virus3", "./images/virus370x70.png");
   game.load.image("playb", "./images/playButton.png");
   game.load.image("pauseb", "./images/pauseButton.png");
+  game.load.image("back4","./images/grandma.png")
   // 게임에 필요한 데이터 로드
 }
 
@@ -35,6 +36,8 @@ function create() {
   game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
   game.create.texture('sky', ['E'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
   //game.add.sprite(0, 0, 'sky');                   // sky를 x좌표 0, y좌표 0 위치에 추가
+  this.backgrouund = this.game.add.sprite(0,0,'back4'); // 게임 배경 설정 
+  this.backgrouund.inputEnabled= true; // 게임 배경 설정 
   sky = game.add.group();
   sky.enableBody = true;
   sky.create(0, 0, "sky");

@@ -9,6 +9,7 @@
   var enemy2Alive;
   var enemy2Array = [];
   var sky;
+  var back;
   var playerLife = 3; //총 목숨 3개 
   var time = 30; //시간 30초로 설정
   var txtTime;
@@ -26,19 +27,23 @@
     game.load.image("virus3", "./images/virus370x70.png");
     game.load.image("playb", "./images/playButton.png");
     game.load.image("pauseb", "./images/pauseButton.png");
+    game.load.image("back","./images/street.png");
     // 게임에 필요한 데이터 로드
   }
 
   function create() {
     /// 게임 처음 실행시 수행되는 함수
     game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
-    game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
-    game.create.texture('sky', ['E'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
-    //game.add.sprite(0, 0, 'sky');                   // sky를 x좌표 0, y좌표 0 위치에 추가
+    //game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
+    //game.stage.image(1000, 600, 'back');
+    this.backgrouund = this.game.add.sprite(0,0,'back'); // 게임 배경 설정 
+    this.backgrouund.inputEnabled= true; // 게임 배경 설정 
+    //this.backgrouund.events.onInputDown.add(this.placeItemm,this);
+    game.create.texture('sky', ['B'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
+    game.add.sprite(0, 0, 'sky');                  // sky를 x좌표 0, y좌표 0 위치에 추가
     sky = game.add.group();
-    sky.enableBody = true;
+    //sky.enableBody = true;
     sky.create(0, 0, "sky");
-    
     box = game.add.group();      // box 그룹 생성
     box.enableBody = true;       // box에 충돌속성을 설정합니다.
 
