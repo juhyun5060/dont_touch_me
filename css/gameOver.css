@@ -16,7 +16,7 @@ body {
 
 .donttouchme {
     text-align: center;
-    margin-top: 2%;
+    margin-top: 6%;
 }
 
 .virus1 {
@@ -44,7 +44,7 @@ body {
     height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 15%;
+    bottom: 12%;
     right: 15%;
     border-radius: 10px;
 }
@@ -56,7 +56,7 @@ body {
     height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 15%;
+    bottom: 12%;
     left: 15%;
     border-radius: 10px;
 }

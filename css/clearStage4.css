@@ -18,7 +18,7 @@ body {
 .font {
     text-align: left;
     font-family: 'Gothic A1', sans-serif;
-    margin-top: 2%;
+    margin-top: 3%;
     margin-left: 5%;
 }
 
@@ -29,7 +29,7 @@ body {
     height: 10%;
     background-color: black;
     position: absolute;
-    bottom: 15%;
+    bottom: 12%;
     right: 15%;
     border-radius: 10px;
 }
