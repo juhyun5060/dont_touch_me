@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean'); 
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color:#f1c40f;
+}
+
+h3 {
+    font-family: 'Gothic A1', sans-serif;
+    text-align: center;
+}
+
+.img1 {
+    position: absolute;
+    top: 12%;
+    left: 15%;
+    margin-top: 10%;
+}
+
+.img2 {
+    position: absolute;
+    top: 12%;
+    right: 15%;
+    margin-top: 10%;
+}
+
+.text {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 2cm;
+    background-color: white;
+    text-align: center;
+    padding: 10 10 10 10;
+    margin: 0;
+}
+
+.main {
+    font-size: 5vh;
+    color: white;
+    width: 14%;
+    height: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: 12%;
+    right: 15%;
+    border-radius: 10px;
+}
