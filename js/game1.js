@@ -15,6 +15,7 @@
   var txtTime;
   var txtLocation;
   var eventTime;
+  var countdown;
   var playb,pauseb;
   var virus1,virus2,virus3;
   function preload() {
@@ -81,7 +82,7 @@
     enemy2 = game.add.group();
     enemy2.enableBody = true;
     enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy2.createMultiple(6, "enemy2"); //적 개수
+    enemy2.createMultiple(5, "enemy2"); //적 개수
 
     enemy2.setAll("outOfBoundsKill", true);
     enemy2.setAll("checkWorldBounds", true);
