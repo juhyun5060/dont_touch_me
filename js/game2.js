@@ -19,8 +19,8 @@ var virus1,virus2,virus3;
 function preload() {
   game.load.image("box", "./images/box.png");
   game.load.image("player", "./images/character50x75.png");
-  game.load.image("enemy1", "./images/virus_mouse_left50x50.png");
-  game.load.image("enemy2", "./images/virus_mouse_right50x50.png");
+  game.load.image("enemy1", "./images/virus_mouse_left40x40.png");
+  game.load.image("enemy2", "./images/virus_mouse_right40x40.png");
   game.load.image("virus1", "./images/virus170x70.png");
   game.load.image("virus2", "./images/virus270x70.png");
   game.load.image("virus3", "./images/virus370x70.png");
