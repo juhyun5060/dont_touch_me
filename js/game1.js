@@ -32,6 +32,10 @@
   }
 
   function create() {
+    txtTime = game.add.text(400, 10, "TIME : 30", { fontSize: "35px Arial", fill: "#FFFFFF" });
+    txtLocation = game.add.text(10, 15, "STAGE 1 집 -> 버스", { fontSize: "20px Arial", fill: "#FFFFFF" });
+    
+
     /// 게임 처음 실행시 수행되는 함수
     game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
     //game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
@@ -77,7 +81,7 @@
     enemy2 = game.add.group();
     enemy2.enableBody = true;
     enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy2.createMultiple(5, "enemy2"); //적 개수
+    enemy2.createMultiple(6, "enemy2"); //적 개수
 
     enemy2.setAll("outOfBoundsKill", true);
     enemy2.setAll("checkWorldBounds", true);
