@@ -1,5 +1,5 @@
 function start() {
-    location.href="game1.html"
+    location.href="countdown1.html"
 }
 function main() {
     location.href="index.html"

@@ -20,7 +20,7 @@ function update() {
     txtTime.setText("");
     txtTime = game.add.text(390, 250, "START", { fontSize: "80px Arial", fill: "#000000" });
   }else{ //30초 넘기면 다음 스테이지 
-    location.href="clearStage1.html"
+    location.href="game4.html"
   }  
   
 }//end of update

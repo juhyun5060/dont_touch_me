@@ -69,7 +69,7 @@ function create() {
   enemy1 = game.add.group();
   enemy1.enableBody = true;
   enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-  enemy1.createMultiple(15, "enemy1"); //적 개수
+  enemy1.createMultiple(16, "enemy1"); //적 개수
 
   enemy2 = game.add.group();
   enemy2.enableBody = true;

@@ -77,12 +77,12 @@
     enemy1 = game.add.group();
     enemy1.enableBody = true;
     enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy1.createMultiple(5, "enemy1"); //적 개수
+    enemy1.createMultiple(6, "enemy1"); //적 개수
 
     enemy2 = game.add.group();
     enemy2.enableBody = true;
     enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy2.createMultiple(5, "enemy2"); //적 개수
+    enemy2.createMultiple(6, "enemy2"); //적 개수
 
     enemy2.setAll("outOfBoundsKill", true);
     enemy2.setAll("checkWorldBounds", true);
