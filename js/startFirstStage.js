@@ -3,5 +3,5 @@ function main() {
 }
 
 function next() {
-    location.href="game1.html"
+    location.href="street.html"
 }

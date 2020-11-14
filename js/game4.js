@@ -10,7 +10,7 @@ var enemy2Alive;
 var enemy2Array = [];
 var sky;
 var playerLife = 3; //총 목숨 3개 
-var time = 30; // 제한시간 30초
+var time = 5; // 제한시간 30초
 var txtTime;
 var txtLocation;
 var eventTime;
@@ -81,7 +81,7 @@ function create() {
 
   keyMove = game.input.keyboard.createCursorKeys();
 
-  txtTime = game.add.text(400, 10, "TIME : 0", { fontSize: "35px Arial", fill: "#FFFFFF" });
+  txtTime = game.add.text(400, 10, "TIME : 30", { fontSize: "35px Arial", fill: "#FFFFFF" });
   txtLocation = game.add.text(10, 15, "STAGE 4 길 -> 할머니 댁", { fontSize: "20px Arial", fill: "#FFFFFF" });
   eventTime = game.time.events.loop(Phaser.Timer.SECOND, function () { time--; txtTime.setText("TIME : " + time); }, this);
   //virus1 = game.add.image(500,10,"virus1");
@@ -92,7 +92,7 @@ function create() {
 
 function update() {
   if(time ==0){ //30초 넘기면 다음 스테이지 
-    location.href="clearStage4.html"
+    location.href="clearStageGrandmahouse.html"
   }
 
   // 프레임워크에서 주기적으로 수행하는 함수
@@ -106,7 +106,7 @@ function update() {
     return;
   }
 
-  var speed = 200;
+  var speed = 220;
   if (keyMove.left.isDown && keyMove.up.isDown) {
     player.body.velocity.x = -speed;
     player.body.velocity.y = -speed;
@@ -187,6 +187,6 @@ function HitsPlayer(sky, enemies) {
   playerLife -= 1;
   if(playerLife==0){
   game.time.events.remove(eventTime);
-  location.href = "gameOver4.html";
+  location.href = "gameOverGrandmahouse.html";
   }
 }

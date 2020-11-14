@@ -3,14 +3,14 @@ function main() {
 }
 
 function restart1() {
-    location.href="countdown1.html"
+    location.href="countdownStreet.html"
 }
 function restart2() {
-    location.href="countdown2.html"
+    location.href="countdownBus.html"
 }
 function restart3() {
-    location.href="countdown3.html"
+    location.href="countdownSubway.html"
 }
 function restart4() {
-    location.href="countdown4.html"
+    location.href="countdownGrandmahouse.html"
 }

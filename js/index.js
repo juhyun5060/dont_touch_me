@@ -1,7 +1,6 @@
 function HowToPlay(){
-    location.href="howToPlay.html"
+    location.href="HowToPlay.html"
 }
-
 function start() {
     location.href="story.html"
 }

@@ -77,7 +77,7 @@
     enemy1 = game.add.group();
     enemy1.enableBody = true;
     enemy1.physicsBodyType = Phaser.Physics.ARCADE;
-    enemy1.createMultiple(6, "enemy1"); //적 개수
+    enemy1.createMultiple(7, "enemy1"); //적 개수
 
     enemy2 = game.add.group();
     enemy2.enableBody = true;
@@ -98,7 +98,7 @@
   function update() {
 
     if(time ==0){ //30초 넘기면 다음 스테이지 
-      location.href="clearStage1.html"
+      location.href="clearStageStreet.html"
     }
 
     // 프레임워크에서 주기적으로 수행하는 함수
@@ -112,7 +112,7 @@
       return;
     }
 
-    var speed = 200;
+    var speed = 220;
     if (keyMove.left.isDown && keyMove.up.isDown) {
       player.body.velocity.x = -speed;
       player.body.velocity.y = -speed;
@@ -167,14 +167,14 @@
       var random = game.rnd.integerInRange(0, enemy1Array.length - 1);
       var enemy1Box = enemy1Array[random];
       enemy1Alive.reset(enemy1Box.body.x, enemy1Box.body.y);
-      game.physics.arcade.moveToObject(enemy1Alive, player, 100); //적 속도 조절
+      game.physics.arcade.moveToObject(enemy1Alive, player, 120); //적 속도 조절
     }
 
     if (enemy2Alive && enemy2Array.length > 0) {
         var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
         var enemy2Box = enemy2Array[random];
         enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
-        game.physics.arcade.moveToObject(enemy2Alive, player, 100); //적 속도 조절
+        game.physics.arcade.moveToObject(enemy2Alive, player, 120); //적 속도 조절
       }
 
     game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
@@ -193,6 +193,6 @@
     playerLife -= 1;
     if(playerLife==0){
     game.time.events.remove(eventTime);
-    location.href = "gameOver1.html";
+    location.href = "gameOverStreet.html";
     }
 }
