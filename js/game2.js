@@ -169,7 +169,7 @@ function update() {
       var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
       var enemy2Box = enemy2Array[random];
       enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
-      game.physics.arcade.moveToObject(enemy2Alive, player, 10); //적 속도 조절
+      game.physics.arcade.moveToObject(enemy2Alive, player, 120); //적 속도 조절
     }
 
   game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
