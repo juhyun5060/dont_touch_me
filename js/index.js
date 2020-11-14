@@ -1,5 +1,5 @@
 function HowToPlay(){
-    location.href="HowToPlay.html"
+    location.href="howToPlay.html"
 }
 
 function start() {
