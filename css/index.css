@@ -68,3 +68,6 @@ font {
     right: 10%;
     border-radius: 10px;
 }
+.start_btn:focus { outline: none; }
+.how_btn:focus { outline: none; }
+.story_btn:focus { outline: none; }

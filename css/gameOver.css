@@ -60,3 +60,5 @@ body {
     left: 15%;
     border-radius: 10px;
 }
+.main:focus { outline: none; }
+.again:focus { outline: none; }

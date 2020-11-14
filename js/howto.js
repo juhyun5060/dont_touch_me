@@ -4,3 +4,6 @@ function start() {
 function main() {
     location.href="index.html"
 }
+function developerInfo() {
+    location.href="developerInfo.html"
+}

@@ -39,3 +39,4 @@ body {
     margin-right: 10%;
     margin-top: 0;
 }
+.next:focus { outline: none; }

@@ -44,3 +44,5 @@ font {
     right: 20%;
     border-radius: 10px;
 }
+.start_btn:focus { outline: none; }
+.main_btn:focus { outline: none; }

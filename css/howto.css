@@ -40,3 +40,18 @@ font {
     right: 20%;
     border-radius: 10px;
 }
+
+.developerInfo_btn {
+    font-size: 5vh;
+    color: white;
+    width: 16%;
+    height: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    border-radius: 10px;
+}
+.developerInfo_btn:focus { outline: none; }
+.start_btn:focus { outline: none; }
+.main_btn:focus { outline: none; }
