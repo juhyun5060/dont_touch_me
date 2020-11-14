@@ -10,7 +10,7 @@ var enemy2Alive;
 var enemy2Array = [];
 var sky;
 var playerLife = 3; //총 목숨 3개 
-var time = 5; // 제한시간 30초
+var time = 30; // 제한시간 30초
 var txtTime;
 var txtLocation;
 var eventTime;
