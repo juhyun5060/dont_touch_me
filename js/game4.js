@@ -14,8 +14,8 @@ var time = 30; // 제한시간 30초
 var txtTime;
 var txtLocation;
 var eventTime;
-var playb,pauseb;
-var virus1,virus2,virus3;
+var playb, pauseb;
+var virus1, virus2, virus3;
 function preload() {
   game.load.image("box", "./images/box.png");
   game.load.image("player", "./images/character50x75.png");
@@ -26,22 +26,25 @@ function preload() {
   game.load.image("virus3", "./images/virus370x70.png");
   game.load.image("playb", "./images/playButton.png");
   game.load.image("pauseb", "./images/pauseButton.png");
-  game.load.image("back4","./images/grandma.png")
+  game.load.image("back4", "./images/grandma.png")
   // 게임에 필요한 데이터 로드
 }
 
 function create() {
+  game.scale.pageAlignHorizontally = true;
+  game.scale.pageAlignVertically = true;
+  game.scale.refresh();
   /// 게임 처음 실행시 수행되는 함수
   game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
   game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
   game.create.texture('sky', ['B'], 1000, 80, 0);  // 'E' 코드색상 1000x80 크기의 블럭을 'sky' 이름으로 생성
   //game.add.sprite(0, 0, 'sky');                   // sky를 x좌표 0, y좌표 0 위치에 추가
-  this.backgrouund = this.game.add.sprite(0,0,'back4'); // 게임 배경 설정 
-  this.backgrouund.inputEnabled= true; // 게임 배경 설정 
+  this.backgrouund = this.game.add.sprite(0, 0, 'back4'); // 게임 배경 설정 
+  this.backgrouund.inputEnabled = true; // 게임 배경 설정 
   sky = game.add.group();
   sky.enableBody = true;
   sky.create(0, 0, "sky");
-  
+
   box = game.add.group();      // box 그룹 생성
   box.enableBody = true;       // box에 충돌속성을 설정합니다.
 
@@ -91,18 +94,18 @@ function create() {
 }//end of create
 
 function update() {
-  if(time ==0){ //30초 넘기면 다음 스테이지 
-    location.href="clearStageGrandmahouse.html"
+  if (time == 0) { //30초 넘기면 다음 스테이지 
+    location.href = "clearStageGrandmahouse.html"
   }
 
   // 프레임워크에서 주기적으로 수행하는 함수
   player.body.velocity.setTo(0, 0); // 관성을 0으로 설정  
-  if(playerLife==2){
-    virus1 = game.add.image(900,10,"virus1");
-  }else if(playerLife==1){
-    virus2 = game.add.image(800,10,"virus2");
-  }else if(playerLife<1){
-    virus3 = game.add.image(700,10,"virus3");
+  if (playerLife == 2) {
+    virus1 = game.add.image(900, 10, "virus1");
+  } else if (playerLife == 1) {
+    virus2 = game.add.image(800, 10, "virus2");
+  } else if (playerLife < 1) {
+    virus3 = game.add.image(700, 10, "virus3");
     return;
   }
 
@@ -153,8 +156,8 @@ function update() {
   });
 
   box.forEachAlive(function (enemy2Alive) {
-      enemy2Array.push(enemy2Alive);
-    });
+    enemy2Array.push(enemy2Alive);
+  });
 
   // box 중 랜덤으로 하나를 골라서 적을 생성한다.
   if (enemy1Alive && enemy1Array.length > 0) {
@@ -165,11 +168,11 @@ function update() {
   }
 
   if (enemy2Alive && enemy2Array.length > 0) {
-      var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
-      var enemy2Box = enemy2Array[random];
-      enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
-      game.physics.arcade.moveToObject(enemy2Alive, player, 130); //적 속도 조절
-    }
+    var random = game.rnd.integerInRange(0, enemy2Array.length - 1);
+    var enemy2Box = enemy2Array[random];
+    enemy2Alive.reset(enemy2Box.body.x, enemy2Box.body.y);
+    game.physics.arcade.moveToObject(enemy2Alive, player, 130); //적 속도 조절
+  }
 
   game.physics.arcade.collide(player, box);   // player와 box가 충돌할수 있도록 설정
   game.physics.arcade.overlap(sky, enemy1, HitsSky, null, this);
@@ -185,8 +188,8 @@ function HitsSky(sky, enemies) {
 function HitsPlayer(sky, enemies) {
   enemies.kill();
   playerLife -= 1;
-  if(playerLife==0){
-  game.time.events.remove(eventTime);
-  location.href = "gameOverGrandmahouse.html";
+  if (playerLife == 0) {
+    game.time.events.remove(eventTime);
+    location.href = "gameOverGrandmahouse.html";
   }
 }

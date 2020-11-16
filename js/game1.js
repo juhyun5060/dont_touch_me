@@ -18,6 +18,7 @@
   var countdown;
   var playb,pauseb;
   var virus1,virus2,virus3;
+  
   function preload() {
     game.load.image("box", "./images/box.png");
     game.load.image("player", "./images/character50x75.png");
@@ -33,10 +34,12 @@
   }
 
   function create() {
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.scale.refresh();
     txtTime = game.add.text(400, 10, "TIME : 30", { fontSize: "35px Arial", fill: "#FFFFFF" });
     txtLocation = game.add.text(10, 15, "STAGE 1 집 -> 버스", { fontSize: "20px Arial", fill: "#FFFFFF" });
     
-
     /// 게임 처음 실행시 수행되는 함수
     game.physics.startSystem(Phaser.Physics.ARCADE); // 게임 속성 설정(아케이드)
     //game.stage.backgroundColor = "#f1c40f";         // 게임 배경색 설청
