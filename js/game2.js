@@ -24,8 +24,6 @@ function preload() {
   game.load.image("virus1", "./images/virus170x70.png");
   game.load.image("virus2", "./images/virus270x70.png");
   game.load.image("virus3", "./images/virus370x70.png");
-  game.load.image("playb", "./images/playButton.png");
-  game.load.image("pauseb", "./images/pauseButton.png");
   game.load.image("back2", "./images/busStop.png")
   // 게임에 필요한 데이터 로드
 }
