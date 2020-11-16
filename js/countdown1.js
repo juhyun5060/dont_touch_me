@@ -22,7 +22,7 @@ function update() {
    }else if(time ==0 ){ //30초 넘기면 다음 스테이지 
     txtTime.setText("");
     txtTime = game.add.text(390, 250, "START", { fontSize: "80px Arial", fill: "#000000" });
-  }else{ //3초 지나면 
+  }else if(time<0){ //3초 지나면 
     location.href="street.html"
   }  
   
