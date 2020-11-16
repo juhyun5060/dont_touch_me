@@ -95,8 +95,8 @@ function create() {
 
 function update() {
 
-  if (time == 0) { //30초 넘기면 다음 스테이지 
-    txtTime.setText("0");
+  if (time<0) { //30초 넘기면 다음 스테이지 
+    txtTime.setText("TIME : 0");
     location.href = "clearStageBus.html"
   }
 
