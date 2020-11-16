@@ -25,5 +25,4 @@ function update() {
   }else if(time<0){ //3초 지나면 
     location.href="street.html"
   }  
-  
 }//end of update
