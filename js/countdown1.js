@@ -21,7 +21,7 @@ function update() {
     txtTime.setText(time);
    }else if(time ==0 ){ //30초 넘기면 다음 스테이지 
     txtTime.setText("");
-    txtTime = game.add.text(390, 250, "START", { fontSize: "80px Arial", fill: "#000000" });
+    txtTime = game.add.text(350, 250, "Loading...", { fontSize: "80px Arial", fill: "#000000" });
   }else if(time<0){ //3초 지나면 
     location.href="street.html"
   }  
