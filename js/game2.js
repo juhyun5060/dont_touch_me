@@ -75,7 +75,7 @@ function create() {
   enemy2 = game.add.group();
   enemy2.enableBody = true;
   enemy2.physicsBodyType = Phaser.Physics.ARCADE;
-  enemy2.createMultiple(9, "enemy2"); //적 개수
+  enemy2.createMultiple(10, "enemy2"); //적 개수
 
   enemy2.setAll("outOfBoundsKill", true);
   enemy2.setAll("checkWorldBounds", true);
